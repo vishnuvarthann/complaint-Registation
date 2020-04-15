@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:navigationdrawer/Network/Loader.dart';
-import 'package:navigationdrawer/fragments/Loginscreen.dart';
 import 'package:navigationdrawer/fragments/NavigationDrawer.dart';
+import 'package:navigationdrawer/login/Login.dart';
 
 class Authentication extends StatelessWidget {
   @override
@@ -15,7 +15,7 @@ class Authentication extends StatelessWidget {
                 if (snapshot.data == true) {
                   return NavigationDrawer();
                 } else {
-                  return Loginscreen();
+                  return Login();
                 }
               } else {
                   return Loader(

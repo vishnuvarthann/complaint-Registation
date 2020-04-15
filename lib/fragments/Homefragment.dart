@@ -47,14 +47,14 @@ class _HomefragmentState extends State<Homefragment> {
                     AppButton(
                       id:'urban',
                       width: size.width * 0.7,
-                      height: size.height * 0.1,
+                      height: size.height * 0.08,
                       onPressed: (route, count,id) => this._clicked(route, context,id),
                       route: '/citizenservice',
                       title:HOME.citizenUrban ),
                        AppButton(
                       id:'Rural',
                       width: size.width * 0.7,
-                      height: size.height * 0.1,
+                      height: size.height * 0.08,
                       onPressed: (route, count,id) => this._clicked(route, context,id),
                       route: '/citizenservice',
                       title:HOME.citizenRural ),
@@ -72,7 +72,7 @@ class _HomefragmentState extends State<Homefragment> {
                                     AppButton(
                                       id: 'allotee',
                                       width: size.width * 0.7,
-                                      height: size.height * 0.1,
+                                       height: size.height * 0.08,
                                       onPressed: (route, count,id) => this._clicked(route, context,id),
                                       route: '/allotte',
                                       title: HOME.allotee,
@@ -80,7 +80,7 @@ class _HomefragmentState extends State<Homefragment> {
                                       AppButton(
                                       id: 'authorityUser',
                                       width: size.width * 0.7,
-                                      height: size.height * 0.1,
+                                      height: size.height * 0.08,
                                       onPressed: (route, count,id) => this._clicked(route, context,id),
                                       route:'/login',
                                       title: HOME.authorityUser,

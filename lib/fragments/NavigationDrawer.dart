@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:navigationdrawer/Utility/MyConstants.dart';
 import 'package:navigationdrawer/fragments/Aboutfragment.dart';
-import 'package:navigationdrawer/fragments/Citizendetails.dart';
 import 'package:navigationdrawer/fragments/Homefragment.dart';
 import 'package:navigationdrawer/fragments/Paynow.dart';
 import 'package:navigationdrawer/sideBar/SidebarList.dart';
-
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'Homefragment.dart';
 
 
 class NavigationDrawer extends StatefulWidget {
 
- final List<String> taptitles= [BOTTOMNAV.home,BOTTOMNAV.paynow,BOTTOMNAV.trackservic];
+ final List<String> taptitles= [BOTTOMNAV.title,BOTTOMNAV.paynow,BOTTOMNAV.trackservic];
 
   @override
   _NavigationDrawerState createState() => _NavigationDrawerState();
@@ -25,7 +24,8 @@ Widget container = Homefragment();
  final List<Widget> _children = [
     Homefragment(),
     Paynow(neeAppBar:false),
-    Citizendetails()
+     //Paynow(),
+    //BaseAlert(child:null)
              ];
              @override
              Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ Widget container = Homefragment();
                                  Icons.home,
                                  color: Colors.blue,
                                ),
-                               title: Text(BOTTOMNAV.home,style: new TextStyle(
+                               title: Text(BOTTOMNAV.trackservic,style: new TextStyle(
                                fontStyle: FontStyle.normal, color: Colors.black,
                                 fontWeight: FontWeight.bold,fontSize: 14.0, ),
                              ),),
@@ -62,15 +62,7 @@ Widget container = Homefragment();
                                fontStyle: FontStyle.normal, color: Colors.black,
                                 fontWeight: FontWeight.bold,fontSize: 14.0, ),),
                              ),
-                             BottomNavigationBarItem(
-                               icon: new Icon(
-                                 Icons.track_changes,
-                                 color: Colors.blue,
-                               ),
-                               title: new Text(BOTTOMNAV.trackservic,style: new TextStyle(
-                               fontStyle: FontStyle.normal, color: Colors.black,
-                                fontWeight: FontWeight.bold,fontSize: 14.0, ),),
-                             ),
+                             
                            ],
                          ),);
                          
@@ -82,53 +74,87 @@ Widget container = Homefragment();
                this.setState(( ) {
                  _currentIndex = tab;
                  title = widget.taptitles[tab];
-               });
-             }
+                 print(_currentIndex);
+                 if (_currentIndex == 0){
+                   _customizedALERT();
+                                    }
+                                  });
+                                }
+                                      
+                                        _moveToNotes(context) {
+                                          Navigator.push(
+                                              context, MaterialPageRoute(builder: (context) => Aboutfragment()));
+                                        }
+                                      
+                                        _pickedOption(menu) {
+                                          Navigator.pop(context);
+                                      
+                                          switch (menu) {
+                                            case Menu.aboutus:
+                                             // container = login();
+                                                 Navigator.pushNamed(context, '/homepage',
+                                                  arguments: {'type': Menu.aboutus});
+                                              break;
+                                      
+                                            case Menu.faq:
+                                              // container = Faqfragment();
+                                               Navigator.pushNamed(context, '/faq',
+                                                  arguments: {'type': Menu.faq});
+                                              break;
+                                      
+                                             case Menu.feedback:
+                                             // container = Feedbackfragment();
+                                                 Navigator.pushNamed(context, '/Feedback',
+                                                  arguments: {'type': Menu.feedback});
+                                                
+                                              break;
+                                      
+                                             case Menu.smog:
+                                             //  container = SmogPollutionfragment();
+                                                Navigator.pushNamed(context, '/smogandpollution',
+                                                  arguments: {'type': Menu.smog});
+                                              break;
+                                              
+                                             case Menu.markmyattendance:
+                                             Navigator.pushNamed(context, '/login',
+                                               arguments: {'type': Menu.markmyattendance});
+                                             
+                                          }
+                                          this.setState(() => {});
+                                          print(menu);
+                                        }
+                              
+                                static showAlertDialog(Type buildContext, BuildContext context) {}
                    
-                     _moveToNotes(context) {
-                       Navigator.push(
-                           context, MaterialPageRoute(builder: (context) => Aboutfragment()));
+                     void _customizedALERT() {
+                        Alert(
+      context: context,
+      type: AlertType.none,
+      title: Trackservice.trackservice,
+      desc: Trackservice.trackhint,
+      buttons: [
+        DialogButton(
+          child: Text(
+            Trackservice.trackid,
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          onPressed: () { Navigator.pushNamed(context, '/Feedback',
+                                            arguments: {'type': Menu.feedback});
+                                           Navigator.of(context).pop();
+          }
+        
+        ),
+        DialogButton(
+          child: Text(
+            Trackservice.mobileNo,
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          onPressed: () => Navigator.pop(context),
+         
+        )
+      ],
+    ).show();
                      }
-                   
-                     _pickedOption(menu) {
-                       Navigator.pop(context);
-                   
-                       switch (menu) {
-                         case Menu.aboutus:
-                          // container = login();
-                              Navigator.pushNamed(context, '/about',
-                               arguments: {'type': Menu.aboutus});
-                           break;
-                   
-                         case Menu.faq:
-                           // container = Faqfragment();
-                            Navigator.pushNamed(context, '/faq',
-                               arguments: {'type': Menu.faq});
-                           break;
-                   
-                          case Menu.feedback:
-                          // container = Feedbackfragment();
-                              Navigator.pushNamed(context, '/Feedback',
-                               arguments: {'type': Menu.feedback});
-                             
-                           break;
-                   
-                          case Menu.smog:
-                          //  container = SmogPollutionfragment();
-                             Navigator.pushNamed(context, '/smogandpollution',
-                               arguments: {'type': Menu.smog});
-                           break;
-                           
-                          case Menu.markmyattendance:
-                          Navigator.pushNamed(context, '/login',
-                            arguments: {'type': Menu.markmyattendance});
-                          
-                       }
-                       this.setState(() => {});
-                       print(menu);
-                     }
-           
-             static showAlertDialog(Type buildContext, BuildContext context) {}
                }
        
        _customizedAlert(BuildContext context) {

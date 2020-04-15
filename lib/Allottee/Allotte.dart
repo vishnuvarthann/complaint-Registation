@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:navigationdrawer/CommonWidgets/SpanText.dart';
+import 'package:navigationdrawer/Utility/AppButton.dart';
 import 'package:navigationdrawer/Utility/MyConstants.dart';
+
 
 class Allotte extends StatefulWidget {
   @override
@@ -10,8 +13,18 @@ class _State extends State<Allotte> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
  
+
+ @override
+  void initState() {
+    super.initState();
+   
+  }
+
+ 
+ 
   @override
   Widget build(BuildContext context) {
+     final size = MediaQuery.of(context).size;
     return Scaffold(
        appBar: AppBar(
             title: Text(HOME.login),
@@ -80,30 +93,37 @@ class _State extends State<Allotte> {
                         print(nameController.text);
                         print(passwordController.text);
                       },
-                      
                     )),
-                    Container(
-                      padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                      child:Text(ServicesHistory.allotepasshit,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.0),
-          )
+                                       
+                 Container(
+                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                    child:SpanText(textvalue:ServicesHistory.note,hinttext: ServicesHistory.allotepasshit),
+                     ),
+                    
+                Container(
+                    padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                    child:SpanText(textvalue:ServicesHistory.note,hinttext:ServicesHistory.allotereghit)
                     ),
-                         Container(
-                      padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                      child:  Text(ServicesHistory.allotereghit,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.0),
-          )
-                    )
-                    
-                    
-              ],
-              
-            )
-            
-            )
-            );
-  }
+                Container(
+                 padding: EdgeInsets.fromLTRB(30, 20, 20, 0),
+                 child:  AppButton( id:'PdfDownloader',
+                      width: size.width * 0.5,
+                      height: size.height * 0.05,
+                      onPressed: (route, count,id) => this._clicked(route, context,id),
+                                            route: '/PdfDownloader',
+                                            title:LOGIN.download),
+                  )  ],
+                                    
+                                  )
+                                  
+                                  )
+                                  );
+                        }
+                      
+  _clicked(route, context,id) {
+          print(route);
+          print(id);
+          Navigator.pushNamed(context, route,);
+        }   
 }
  

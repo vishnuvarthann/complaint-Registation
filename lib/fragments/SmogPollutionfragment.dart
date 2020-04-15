@@ -39,18 +39,18 @@ class SmogPollutionfragment extends StatefulWidget {
       body:Center(
         child: Container(
         child: new Column(
-           mainAxisAlignment: MainAxisAlignment.start,
+           mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
                 AppButton(
                    width: size.width * 0.7,
-                   height: size.height * 0.1,
+                   height: size.height * 0.08,
                    onPressed: this._onPressed,
                    title: HOME.smogPollutionRural,
                 ),
 
              AppButton(
                    width: size.width * 0.7,
-                   height: size.height * 0.1,
+                   height: size.height * 0.08,
                    onPressed: this._onPressed,
                    title: HOME.smogPollutionUrban,
                 ),

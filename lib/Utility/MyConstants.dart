@@ -9,13 +9,27 @@ const  String HOME_TITLE = "Mitra ";
 const  String title ="Greater Noida Industrial Development Authority";
 
 
+
 class BOTTOMNAV{
-static String home ="Citizen Service";
+static String title = "Mitra";
+static String trackservichome ="Citizen Service";
 static String paynow ="Pay Now";
 static String trackservic = "Track Services";
 static String paynoe = "Pay Now";
 static String markattend = "Mark my Attendance";
+}
 
+class Faq{
+  static String citizenService ="1 How do I submit citizen services request?\n";
+  static String citizenservicedetail ="Based on your locality,you can choose either Urban services  Rural services and then select service type from service list table and fill the form properly ";
+  static String serviceavilable= "2 Does every citizen service is available in myarea?\n";
+  static String servicedetails ="Greater Noida Industrial Development Authority is fully committed for citizen services and cleanliness and proper maintenance of city ,Our team is dedicated and committed for maintaining the city prosperity. But some particular services may be unavailable in your area.";
+  static String gpslocation ="3 Why do you need access of my GPS location?\n";
+  static String gpsdetails ="We need your location to pinpoint the area from which request is coming. So that we can resolve your grievance quickly.";
+  static String pollutioncomplaint = "4 How can i track my citizen service or pollution complaint?\n";
+  static String pollutiondetails="you will receive a message for your tracking ID. you can check the status of your complaint by entering tracking ID in track services section.";
+  static String usenamePassword= "5 How to I get Username and Password?\n";
+  static String usernamedetails ="If you are not registered with GNIDA, then you are requested to submit KYA form in the authority to get username and password. You can download the KYA form from the allottee login page.";
 }
 
 
@@ -23,7 +37,7 @@ class LOGIN {
    static String username ="Enter UserName";
    static String password = "Enter Password";
    static String login ="Login";
-   static String industrial ="Industrial";
+   static String industrial ="Induorstrial";
    static String allotNo="Enter Allotment No";
    static String note ="Password is case sensitive";
    static String notedes = "If you are not Registered with GNIDA,You are Requested to submit KYA form in the Authority to get username and password" ;
@@ -56,10 +70,14 @@ class LOGIN {
 
 
 class FeedBack{
+  static String feedbacktitle= "Mitra Raiting Bar";
   static String feedback ="FeedBack";
   static String feedhint ="Write your feedback";
   static String suggImp ="Suggestions for improvement";
   static String submit ="Submit";
+  static String writeyoufeedback ="Write your feedback";
+  static String suggestion ="Suggestions for improvement";
+
 }
  class NavigationDrawer{
     static String faq ="FAQ";
@@ -70,14 +88,18 @@ class FeedBack{
  }
 
 class Trackservice{
+  static String mobileNo= "Mobile No";
+  static String trackid="Tracking ID";
   static String tracknumber ="Tracking Number";
   static String track ="Track";
   static String feedback ="Give FeedBack";
+  static String trackservice ="Track Service";
+  static String trackhint="You can track your application by Tracking ID or Mobile Number";
 
 }
 
 class ServicesHistory{
-  static String note ="Note";
+  static String note ="Note:  ";
   static String mobilenumber =" Enter Mobile Number";
   static String allotepasshit= "Password is case sensitive";
   static String allotereghit = "If you are not Registered with GNIDA,You are requested to submit KYA from in the Authority to get username and password ";

@@ -1,13 +1,15 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:navigationdrawer/Allottee/Allotte.dart';
 import 'package:navigationdrawer/Authentication/Authentication.dart';
 import 'package:navigationdrawer/fragments/Citizendetails.dart';
 import 'package:navigationdrawer/fragments/Citizenfragment.dart';
 import 'package:navigationdrawer/fragments/Faqfragment.dart';
 import 'package:navigationdrawer/fragments/Feedbackfragment.dart';
+import 'package:navigationdrawer/fragments/PDFDownloader.dart';
 import 'package:navigationdrawer/fragments/SmogPollutionfragment.dart';
-import 'package:navigationdrawer/login/Allotte.dart';
+import 'package:navigationdrawer/login/HomePage.dart';
 import 'package:navigationdrawer/login/Login.dart';
 import 'package:navigationdrawer/login/ServiceHistory.dart';
 import 'package:navigationdrawer/login/TrackService.dart';
@@ -40,7 +42,9 @@ class MyApp extends StatelessWidget {
             '/allotte':(context) =>Allotte(),
             '/trackservice' :(context) => TrackService(),
             '/ServiceHistory':(context) => ServiceHistory(),
-            '/Citizendetails':(context)=> Citizendetails()
+            '/Citizendetails':(context)=> Citizendetails(),
+            '/homepage':(context)=> HomePage(),
+            '/PdfDownloader':(context)=> PDFDownloader()
           },
                     );
                   }

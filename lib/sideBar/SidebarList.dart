@@ -23,8 +23,7 @@ class SidebarList extends StatelessWidget {
                  color: Colors.white,
         ),
                ),
-               
-               
+
         _createOption('FAQ', Icons.mail, Menu.faq),
         Divider(),
         _createOption('Smog and PollutionComPlaint', Icons.poll, Menu.smog),

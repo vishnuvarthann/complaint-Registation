@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart' ;
 import 'package:flutter/widgets.dart';
 import 'package:navigationdrawer/Utility/MyConstants.dart';
-import 'package:navigationdrawer/Utility/RadioWidget.dart';
 
 class Citizendetails extends StatefulWidget {
-
 
    Citizendetails ({Key key}) : super(key: key);
      @override
@@ -38,8 +36,20 @@ class Citizendetails extends StatefulWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                 Container(
-                 child: RadioWidget(),
+                   new DropdownButton<String>(
+                      items: <String>['A', 'B', 'C', 'D'].map((String value) {
+                        return new DropdownMenuItem<String>(
+                          value: value,
+                          child: new Text(value),
+                         
+                        );
+                      }).toList(),
+                      onChanged: (_) {},
+                    
+),
+Container(
+
+               //  child: RadioWidget(),
                          ),
                        Container(
                           margin: const EdgeInsets.only(top:20.0,left:20.0,right: 20.0),
