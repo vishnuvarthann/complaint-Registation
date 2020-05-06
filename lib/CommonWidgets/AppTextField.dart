@@ -25,9 +25,9 @@ class AppTextField extends StatelessWidget {
           TextSpan(
                       text: hinttext,
                       style: TextStyle(
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w400,
                       fontSize: 18, height: 1.5 ,
-                      color: Colors.black54),
+                      color: Colors.black),
                     ),
     ],
   ),

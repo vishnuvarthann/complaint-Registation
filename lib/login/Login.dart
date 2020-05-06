@@ -9,6 +9,7 @@ class Login extends StatefulWidget {
 class _State extends State<Login> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+   bool _validate = false;
  
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class _State extends State<Login> {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: LOGIN.username,
+                         errorText: _validate ? 'Please Enter username' : null,
                     ),
                   ),
                 ),
@@ -39,12 +41,13 @@ class _State extends State<Login> {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: LOGIN.password,
+                      errorText: _validate ? 'Please Enter Password' : null,
                     ),
                   ),
                 ),
                 FlatButton(
                   onPressed: (){
-                    //forgot password screen
+                     
                   },
                   textColor: Colors.blue,
                   child: Text(''),
@@ -57,12 +60,16 @@ class _State extends State<Login> {
                       color: Colors.blue,
                       child: Text('Login'),
                       onPressed: () {
-                        print(nameController.text);
-                        print(passwordController.text);
+                        if (passwordController.text.isEmpty  && nameController.text.isEmpty){
+                                setState(() {
+                                      nameController.text.isEmpty ? _validate = true : _validate = false;
+                                      passwordController.text.isEmpty ? _validate = true : _validate = false;
+                                     });
+                        }
                       },
                     )),
               ],
             )));
   }
-}
+}                                                   
  

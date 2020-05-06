@@ -61,3 +61,5 @@ class SidebarList extends StatelessWidget {
 }
 
 enum Menu {login,faq,customerservice,smog,feedback,aboutus,markmyattendance}
+
+enum Class{feedbackalert}

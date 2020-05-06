@@ -35,8 +35,8 @@ class _HomefragmentState extends State<Homefragment> {
                child: Container(
                  padding: EdgeInsets.all(16.0),
                  child: Column(
-                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: <Widget>[
                  Text(HOME.title, textAlign: TextAlign.center,
                  style: TextStyle( 
                  fontWeight: FontWeight.bold,

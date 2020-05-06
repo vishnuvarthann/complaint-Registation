@@ -94,6 +94,9 @@ class Trackservice{
   static String track ="Track";
   static String feedback ="Give FeedBack";
   static String trackservice ="Track Service";
+  static String alert ="Alert";
+  static String cancel= "Cancel";
+  static String trackalertmess="Enter Tracking Id";
   static String trackhint="You can track your application by Tracking ID or Mobile Number";
 
 }
@@ -114,11 +117,15 @@ class CitizenDetailstext {
   static String complaint ="Description of Complaint";
   static String sitephoto ="Site Photo";
   static String uploaddocument ="Upload Document";
-  static String requestdate=" Request Date:";
-  static String concernedperson ="Concerned Person:";
-  static String name ="Name:";
-  static String mobileno ="Mobile No:";
+  static String requestdate="Request Date:";
+  static String desc =" description details ";
+  static String concernedperson ="Name:";
+  static String concernedpersonmobno = "MobileNo:";
+  static String concerndDetails="Concerned Person details to contact";
+  static String mobileno =" 7829710578 ";
   static String submit ="Submit";
   static String clear ="Clear";
-
+  static String camera ="Camera";
+  static String gallery ="Gallery";
+  static String close ="close";
 }

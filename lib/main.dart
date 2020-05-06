@@ -12,7 +12,7 @@ import 'package:navigationdrawer/fragments/SmogPollutionfragment.dart';
 import 'package:navigationdrawer/login/HomePage.dart';
 import 'package:navigationdrawer/login/Login.dart';
 import 'package:navigationdrawer/login/ServiceHistory.dart';
-import 'package:navigationdrawer/login/TrackService.dart';
+import 'package:navigationdrawer/login/TrackServiceAlert.dart';
 
 import 'fragments/Aboutfragment.dart';
 
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
             '/smogandpollution':(context)=>SmogPollutionfragment(),
             '/login':(context) =>Login(),
             '/allotte':(context) =>Allotte(),
-            '/trackservice' :(context) => TrackService(),
+            '/trackservice' :(context) => TrackServiceAlert(),
             '/ServiceHistory':(context) => ServiceHistory(),
             '/Citizendetails':(context)=> Citizendetails(),
             '/homepage':(context)=> HomePage(),

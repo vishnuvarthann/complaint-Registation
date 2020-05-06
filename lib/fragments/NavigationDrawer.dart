@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:navigationdrawer/Utility/MyConstants.dart';
-import 'package:navigationdrawer/fragments/Aboutfragment.dart';
 import 'package:navigationdrawer/fragments/Homefragment.dart';
 import 'package:navigationdrawer/fragments/Paynow.dart';
+import 'package:navigationdrawer/login/ServiceHistory.dart';
+import 'package:navigationdrawer/login/TrackServiceAlert.dart';
 import 'package:navigationdrawer/sideBar/SidebarList.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'Homefragment.dart';
@@ -21,6 +22,23 @@ Widget container = Homefragment();
  int _currentIndex = 0;
  String title ="";
  
+ var alertStyle = AlertStyle(
+          animationType: AnimationType.fromTop,
+          isCloseButton: true,
+          isOverlayTapDismiss: false,
+          descStyle: TextStyle(fontWeight: FontWeight.bold),
+          animationDuration: Duration(milliseconds: 400),
+          alertBorder: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(0.0),
+            side: BorderSide(
+              color: Colors.blue,
+            ),
+          ),
+          titleStyle: TextStyle(
+            color: Color.fromRGBO(91, 55, 185, 1.0),
+          ),
+        );
+
  final List<Widget> _children = [
     Homefragment(),
     Paynow(neeAppBar:false),
@@ -81,11 +99,7 @@ Widget container = Homefragment();
                                   });
                                 }
                                       
-                                        _moveToNotes(context) {
-                                          Navigator.push(
-                                              context, MaterialPageRoute(builder: (context) => Aboutfragment()));
-                                        }
-                                      
+                                       
                                         _pickedOption(menu) {
                                           Navigator.pop(context);
                                       
@@ -128,56 +142,37 @@ Widget container = Homefragment();
                    
                      void _customizedALERT() {
                         Alert(
-      context: context,
-      type: AlertType.none,
-      title: Trackservice.trackservice,
-      desc: Trackservice.trackhint,
-      buttons: [
-        DialogButton(
-          child: Text(
-            Trackservice.trackid,
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          onPressed: () { Navigator.pushNamed(context, '/Feedback',
-                                            arguments: {'type': Menu.feedback});
-                                           Navigator.of(context).pop();
-          }
+                           context: context,
+                           style: alertStyle,
+                           type: AlertType.none,
+                           title: Trackservice.trackservice,
+                           desc: Trackservice.trackhint,
+                           buttons: [
+                      DialogButton(
+                          child: Text(
+                            Trackservice.trackid,
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                              ),
+                      onPressed: () { Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TrackServiceAlert()),);
+                                                                      }
         
-        ),
+                              ),
         DialogButton(
           child: Text(
             Trackservice.mobileNo,
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
-          onPressed: () => Navigator.pop(context),
-         
-        )
+          onPressed: () { Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ServiceHistory()),);
+                    }
+        ),
       ],
     ).show();
                      }
                }
        
-       _customizedAlert(BuildContext context) {
-            showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-              title: Text(''),
-              content: Text(''),
-              actions: <Widget>[
-                FlatButton(
-                  child: Text("TrackId"),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                 FlatButton(
-                  child: Text("Mobile No"),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                )
-              ],
-            ));
-}
+      
+
         
         
