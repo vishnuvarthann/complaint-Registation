@@ -51,7 +51,7 @@ class SidebarList extends StatelessWidget {
            fontStyle: FontStyle.normal,
            color: Colors.black,
            fontWeight: FontWeight.bold,
-                      fontSize: 16.0, ),
+                      fontSize: 14.0, ),
       ),
       onTap: () => this.pickedOption(menu),
     ));

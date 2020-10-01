@@ -46,7 +46,7 @@ return Scaffold(
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Text (FeedBack.feedbacktitle
+          child: Text (FeedBack.feedbackreopen
             ,style: TextStyle(fontSize: 22))),
  
         SmoothStarRating(
@@ -59,8 +59,8 @@ return Scaffold(
           starCount: 5,
           rating: rating,
           size: 60.0,
-          color: Colors.blue,
-          borderColor: Colors.blue,
+          color: Colors.green,
+          borderColor: Colors.green,
           spacing:0.0,           
         ),
       Container(

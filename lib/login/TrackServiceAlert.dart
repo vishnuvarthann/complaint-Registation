@@ -4,11 +4,6 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 
 class TrackServiceAlert extends StatefulWidget {
 
-  // bool neeAppBar = false;
-   
-
-  // TrackServiceAlert({this.neeAppBar});
-
   @override
   _State createState() => _State();
 }
@@ -20,8 +15,6 @@ class _State extends State<TrackServiceAlert> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      // appBar: widget.neeAppBar ? AppBar() : null,
           appBar:  _apptitle(),
                   body: Padding(
                       padding: EdgeInsets.all(10),
@@ -46,7 +39,7 @@ class _State extends State<TrackServiceAlert> {
                               margin: const EdgeInsets.only(top: 10.0,left:20.0,right: 20.0,bottom: 20.0),
                               child: RaisedButton(
                                 textColor: Colors.white,
-                                color: Colors.blue,
+                                color: Colors.green,
                                 child: Text(Trackservice.track),
                                 onPressed: () {
                                    setState(() {
@@ -59,7 +52,7 @@ class _State extends State<TrackServiceAlert> {
                                 height: 50,
                                 child: RaisedButton(
                                 textColor: Colors.white,
-                                color: Colors.blue,
+                                color: Colors.green,
                                 child: Text(Trackservice.feedback),
                                 onPressed: () {
                                  setState(() {
@@ -87,7 +80,7 @@ class _State extends State<TrackServiceAlert> {
                      DialogButton(
                         child: Text(
                         Trackservice.cancel,
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        style: TextStyle(color: Colors.white, fontSize: 16),
                                ),
                        onPressed: () => Navigator.pop(context),
                          )
