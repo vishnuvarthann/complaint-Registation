@@ -7,12 +7,14 @@ class CitizenButton extends StatelessWidget {
   final Color color;
   final double height;
   final double width;
+ final Text text;
 
    CitizenButton(
       {this.title = '',
       @required this.onPressed,
       this.color =  Colors.blue,
       this.height,
+      this.text,
       this.width});
 
 
@@ -22,16 +24,17 @@ class CitizenButton extends StatelessWidget {
       decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: <Color>[
-                  Color(0xFF0D47A1),
                   Color(0xFF1976D2),
-                  Color(0xFF42A5F5),
+                  Color(0xFF1976D2),
+                  Color(0xFF1976D2),
                 ],
               )),
         height: height,
         width: width,
         margin: EdgeInsets.all(10),
         child: RaisedButton(
-          child: Text(title, style: TextStyle(color: Colors.white, fontSize: 15.0,),),
+          
+          child: Text(title, style: TextStyle(color: Colors.white, fontSize: 16.0,),),
           // shape: RoundedRectangleBorder(
           //           borderRadius: BorderRadius.all(Radius.circular(38.0))),
           onPressed: this.onPressed(),

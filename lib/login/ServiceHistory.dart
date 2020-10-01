@@ -44,7 +44,7 @@ class _State extends State<ServiceHistory> {
                       height: 50,
                       child: RaisedButton(
                       textColor: Colors.white,
-                      color: Colors.blue,
+                      color: Colors.green,
                       child: Text(FeedBack.submit),
                       onPressed:() {
                         if (_text.text.isEmpty ){

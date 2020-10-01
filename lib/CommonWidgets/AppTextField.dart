@@ -20,14 +20,12 @@ class AppTextField extends StatelessWidget {
     return RichText( 
         text: TextSpan(
         text: textvalue,
-        style: TextStyle(fontSize: 20.0, color: Colors.black,fontWeight: FontWeight.w600),
+        style: TextStyle(fontSize: 16.0, color: Colors.black,fontWeight: FontWeight.w600),
         children: <TextSpan>[
           TextSpan(
                       text: hinttext,
                       style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 18, height: 1.5 ,
-                      color: Colors.black),
+                      fontSize: 16.0, color: Colors.black,fontWeight: FontWeight.w600),
                     ),
     ],
   ),

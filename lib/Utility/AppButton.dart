@@ -26,9 +26,9 @@ class AppButton extends StatelessWidget {
       decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: <Color>[
-                  Color(0xFF0D47A1),
-                  Color(0xFF1976D2),
-                  Color(0xFF42A5F5),
+                  Colors.transparent,
+                  Colors.transparent,
+                 Colors.transparent,
                 ],
               
               ),
@@ -36,9 +36,15 @@ class AppButton extends StatelessWidget {
               ),
         height: height,
         width: width,
+      
         margin: EdgeInsets.all(10),
         child: FlatButton(
-          child: Text(title, style: TextStyle(color: Colors.white, fontSize: 20.0,),),
+         shape: RoundedRectangleBorder(
+
+  borderRadius: BorderRadius.circular(30.0),
+  side: BorderSide(color: Colors.green)
+),
+          child: Text(title, style: TextStyle(color: Colors.black, fontSize: 16.0,),),
           onPressed: ()=> this.onPressed(route,context,id),
         ));
   }

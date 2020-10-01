@@ -12,6 +12,8 @@ class Allotte extends StatefulWidget {
 class _State extends State<Allotte> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  var _currencies = ['Industrial', 'Institutional', 'Residential', 'Commercial','IT Biotech','Builders','Group Housing'];
+	var _currentItemSelected = 'Industrial';
  
 
  @override
@@ -39,21 +41,35 @@ class _State extends State<Allotte> {
                     child: Text(
                       HOME_TITLE,
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.green,
                           fontWeight: FontWeight.w500,
                           fontSize: 30),
                     )),
-                Container(
-                 child:  new DropdownButton<String>(
-                items: <String>['A', 'B', 'C', 'D'].map((String value) {
-                return new DropdownMenuItem<String>(
-                  value: value,
-                  child: new Text(value),
-                );
-              }).toList(),
-              onChanged: (_) {},
-                  ),
-                ),
+
+                    Container(
+                     alignment: Alignment.center,
+                     padding: EdgeInsets.all(10),
+                     child:  DropdownButton<String>(
+                     isExpanded: true,
+                     items: _currencies.map((String dropDownStringItem) {
+					          	return DropdownMenuItem<String>(
+							        value: dropDownStringItem,
+							        child: Text(dropDownStringItem),
+                   
+						    );
+                
+					    }
+              ).toList(),
+            
+					    onChanged: (String newValueSelected) {
+					    	// Your code to execute, when a menu item is selected from drop down
+						    _onDropDownItemSelected(newValueSelected);
+					    },
+              hint: Text('DropdownButton Hint'),
+					    value: _currentItemSelected,
+
+				    ),
+            ),
                 Container(
                   padding: EdgeInsets.all(10),
                   child: TextField(
@@ -79,7 +95,7 @@ class _State extends State<Allotte> {
                   onPressed: (){
                     //forgot password screen
                   },
-                  textColor: Colors.blue,
+                  textColor: Colors.green,
                   child: Text(''),
                 ),
                 Container(
@@ -87,7 +103,7 @@ class _State extends State<Allotte> {
                     padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: RaisedButton(
                       textColor: Colors.white,
-                      color: Colors.blue,
+                      color: Colors.green,
                       child: Text('Login'),
                       onPressed: () {
                         print(nameController.text);
@@ -125,5 +141,10 @@ class _State extends State<Allotte> {
           print(id);
           Navigator.pushNamed(context, route,);
         }   
+   void _onDropDownItemSelected(String newValueSelected) {
+	  setState(() {
+		  this._currentItemSelected = newValueSelected;
+	  });
+  }
 }
  

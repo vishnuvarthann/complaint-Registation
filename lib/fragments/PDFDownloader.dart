@@ -20,12 +20,12 @@ class _PDFDownloaderState extends State<PDFDownloader> {
   changePDF(value) async {
     setState(() => _isLoading = true);
     if (value == 1) {
-      document = await PDFDocument.fromAsset('assets/sample2.pdf');
+      document = await PDFDocument.fromAsset('assets/images/all0tte.pdf');
     } else if (value == 2) {
       document = await PDFDocument.fromURL(
           "http://conorlastowka.com/book/CitationNeededBook-Sample.pdf");
     } else {
-      document = await PDFDocument.fromAsset('assets/sample.pdf');
+      document = await PDFDocument.fromAsset('assets/images/all0tte.pdf');
     }
     setState(() => _isLoading = false);
   }
@@ -35,12 +35,11 @@ class _PDFDownloaderState extends State<PDFDownloader> {
     return Scaffold(
        
          appBar: AppBar(
-           title: const Text('FlutterPluginPDFViewer'),
+           title: const Text('Allotte'),
          ),
         body: Center(
             child: _isLoading
                 ? Center(child: CircularProgressIndicator())
-                
                 : PDFViewer(document: document)),
 
       );
